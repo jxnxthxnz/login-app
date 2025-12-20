@@ -1,0 +1,12 @@
+#dependencies
+node_modules/
+
+#env 
+
+#misc
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
