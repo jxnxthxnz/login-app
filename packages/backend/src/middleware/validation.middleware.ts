@@ -12,7 +12,7 @@ export const validate = (schema: ZodSchema) => {
       //zod provides an array of all the things that failed
       //loop over each error and shape into path/message object
       if (error instanceof ZodError) {
-        const details = error.errors.map((err) => ({
+        const details = error.issues.map((err) => ({
           path: err.path.join('.'), //where in the object the failure was
           //. for nested arrays, merge them
           message: err.message,

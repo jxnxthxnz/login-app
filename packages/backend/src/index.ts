@@ -8,7 +8,7 @@ const startServer = async () => {
     console.log('Testing database connection...');
     await testDatabaseConnection();
 
-    // Start server
+    // bind server to a port and start listening for http requests
     app.listen(env.PORT, () => {
       console.log(`Server is running on port ${env.PORT}`);
       console.log(`Environment: ${env.NODE_ENV}`);
@@ -22,6 +22,8 @@ const startServer = async () => {
 };
 
 // Handle uncaught exceptions
+// process is global nodejs object thats current running program
+// .on() event listener
 process.on('uncaughtException', (error) => {
   console.error('Uncaught Exception:', error);
   process.exit(1);

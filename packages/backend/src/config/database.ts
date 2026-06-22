@@ -14,7 +14,7 @@ export const pool = new Pool({
 
 pool.on('connect', () => { //every time a new connection is created
     console.log('Database connection established');
-});
+})
 
 pool.on('error', (err) => {
     console.log('Unexpected database error', err);
